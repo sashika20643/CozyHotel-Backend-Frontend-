@@ -17,9 +17,13 @@ return new class extends Migration
             $table->date('checkout_date')->nullable();
             $table->string('Customer_name')->nullable();
             $table->string('customer_id')->nullable();
-            $table->foreign('roomtype_id')->references('id')->on('roomtypess')->onDelete('cascade');
-            $table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade');
+            $table->integer('roomtype_id')->nullable();
+            $table->integer('room_id')->nullable();
+
+
             $table->timestamps();
+            $table->foreign('roomtype_id')->references('id')->on('roomtypes')->onDelete('cascade');
+            $table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade');
         });
     }
 
