@@ -23,13 +23,13 @@ return view("pages.reservations.filter",compact("roomtypes"));
     public function create(Request $request){
 $startDate=$request->checkin_date;
 $endDate=$request->checkout_date;
-       if(Reservation::where('number',$request->number)->where('roomtype_id',$request->type_id)->whereBetween('checkin_date', [$startDate,$endDate])
+       if(Reservation::where(' roomtype_id ',$request->number)->where('roomtype_id',$request->type_id)->whereBetween('checkin_date', [$startDate,$endDate])
         ->orWhereBetween('checkout_date', [$startDate, $endDate])
         ->orWhere(function ($query) use ($startDate, $endDate) {
             $query->where('checkin_date', '<=', $startDate)
                 ->where('checkin_date', '>=', $endDate);
         })
-        ->exist()){
+        ->count()>0){
 echo "not available";
         }
         else{
