@@ -56,10 +56,10 @@ background-color: rgb(197, 197, 196);
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item active">
-                            <a class="nav-link" href="">Rooms</a>
+                            <a class="nav-link" href="{{route('Admin.room.create')}}">Rooms</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Reservation</a>
+                            <a class="nav-link" href="{{route('Admin.reserve.index')}}">Reservation</a>
                         </li>
 
                             <li class="nav-item dropdown">
