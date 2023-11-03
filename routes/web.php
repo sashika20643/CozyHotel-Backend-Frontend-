@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoomtypeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,18 @@ Route::get('/', function () {
 Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware([
+    'auth',
+
+])->group(function () {
+
+    Route::get('roomtype/create', [RoomtypeController::class, 'create'])->name('Admin.roomtype.create');
+    Route::post('roomtype/store', [RoomtypeController::class, 'store'])->name('Admin.roomtype.store');
+    Route::get('roomtype/edit/{id}', [RoomtypeController::class, 'edit'])->name('Admin.roomtype.edit');
+    Route::put('roomtype/update/{id}', [RoomtypeController::class, 'update'])->name('Admin.roomtype.update');
+    Route::delete('roomtype/delete/{id}', [RoomtypeController::class, 'delete'])->name('Admin.roomtype.delete');
+
+
+
+});

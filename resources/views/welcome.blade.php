@@ -55,9 +55,9 @@
               <div class="mask w-100 h-100" style="background-color: rgba(0, 0, 0, 0.7);position: absolute;top:0;left:0;">
                 <div class="d-flex justify-content-center align-items-center h-100">
                   <div class="text-white">
-                    <h1 class="mb-3">“The best reservation platform"</h1>
+                    <h1 class="mb-3">“The Best Reservation Platform"</h1>
                     <h5 class="mb-4">
-                      start your endless jurney with foozyhotel...
+                      Start your endless journey with CozyHotel...
                     </h5>
                     @guest
                     @if (Route::has('login'))
