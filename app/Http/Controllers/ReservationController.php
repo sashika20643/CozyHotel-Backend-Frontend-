@@ -38,6 +38,9 @@ return view("pages.reservations.create");
 
 
  }
+ function store(Request $request){
+    $reservation = reservation::create($request->all());
+ }
 
     }
 
